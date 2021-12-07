@@ -58,7 +58,7 @@ int main(){
     int even[5] = {1, 2, 3, 3, 5};
 
     cout<<"First occurence of 3 is at Index "<<firstOcurrence(even, 5, 3)<<endl;
-    cout<<"Last occurence of 3 is at Index "<<lastOcurrence(even, 5, 3)<<endl;
+    cout<<"Last occurence of 3 is at Index "<<Ocurrence(even, 5, 3)<<endl;
     
 
     return 0;
