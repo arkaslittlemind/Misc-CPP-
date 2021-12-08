@@ -5,7 +5,7 @@ int binarySearch(int arr[], int size, int key)
 {
     int start = 0;
     int end = size - 1;
-    int mid = start + (end - start) / 2; // modified from (start + end) / 2 to avoid Integer Overflow
+    int mid = start + (end - start) / 2;  // modified from (start + end) / 2 to avoid Integer Overflow
 
     while(start <= end){
 
