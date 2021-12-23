@@ -10,6 +10,7 @@ int main() {
 
     cout << " Address of num is: " << &num << endl;
 
+    // de-referencing operator -> *
     int *ptr = &num;
 
     cout << "The Address is " << ptr << endl;    
