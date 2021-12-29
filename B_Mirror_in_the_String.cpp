@@ -72,42 +72,46 @@ ll mod_div(ll a, ll b, ll m) {a = a % m; b = b % m; return (mod_mul(a, mminvprim
 ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n /= 2;} for (ll i = 3; i <= sqrt(n); i += 2) {if (n % i == 0) {while (n % i == 0)n /= i; number = (number / i * (i - 1));}} if (n > 1)number = (number / n * (n - 1)) ; return number;} //O(sqrt(N))
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
+
 void solve() {
-     int t;
-     cin >> t;
-     while(t--) {
-    vector <long long> answer(3);
-    cin>> answer[0] >> answer[1] >> answer[2];
-    sort(answer.begin(), answer.end());
-    if(answer[2] == (answer[1]+answer[0])) 
-        cout<< "YES" << endl;
-    else if (answer[0] == answer[1]) {
-        if(answer[2] % 2 == 0) cout<< "YES" << endl;
-        else cout<< "NO" << endl;
-    }
-    else if(answer[1] == answer[2]) {
-        if(answer[0] % 2 == 0) cout<< "YES" <<endl;
-        else cout<< "NO" << endl;
-    }
-    else cout<<"NO" << endl;
-     }    
+  int n;
+  cin >> n;
+  string hny, answer;
+  cin >> hny;
+  answer += hny[0];
+  for (int i = 1; i < n; i++) {
+    if (hny[i - 1] > hny[i])
+      answer = answer + hny[i];
+    else if (hny[i - 1] == hny[i] && i > 1)
+      answer = answer + hny[i];
+    else break;
+  }
+  cout << answer;
+  reverse(answer.begin(), answer.end());
+  cout << answer << endl;
 }
- 
+// solve
 
 
-     
+
+
+
 
 
 int main() {
 #ifdef arkaslittlemind
-    freopen("Error.txt", "w", stderr);
+  freopen("Error.txt", "w", stderr);
 #endif
   fastio();
   auto start1 = high_resolution_clock::now();
-  solve();
+  int t;
+  cin >> t;
+  while (t--) {
+    solve();
+  } // testcases
   auto stop1 = high_resolution_clock::now();
   auto duration = duration_cast<microseconds>(stop1 - start1);
 #ifdef arkaslittlemind
   cerr << "Time: " << duration . count() / 1000 << endl;
 #endif
-}
+} // main
