@@ -46,5 +46,12 @@ int main()  {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
+    LL x,y,z;
+	cin>>x>>y>>z;
+	int a=sqrt((x*y)/z);
+	int b=sqrt((x*z)/y);
+	int c=sqrt((y*z)/x);
+	LL res=(a+b+c)*4;
+	cout<<res;
 
 }
