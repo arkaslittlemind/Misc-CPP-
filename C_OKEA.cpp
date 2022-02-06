@@ -85,12 +85,27 @@ ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n
 void arkaslittlemind() {
     int n, k;
     cin >> n >> k;
-    if(k == 1)
-        cout << "YES" << nline;
-
-    else if(n % 2 == 1)
+    if(n % 2 == 0 || k == 1) {
+        cout << "YES" << endl;
+        for(int i = 1, j = 1; i <= n * k; i += 2, j++){
+          cout << i << " ";
+          if(k == j){
+            cout << nline;
+            j = 0;
+          }
+        }
+        for(int i = 2, j = 1; i <= n * k; i += 2, j++){
+          cout << i << " ";
+          if(k == j){
+            cout << nline;
+            j = 0;
+        }
+      }
+    }
+    else {
         cout << "NO" << nline;
-    
+    }
+     
 }
 
 
