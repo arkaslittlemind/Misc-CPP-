@@ -71,31 +71,9 @@ ll mod_sub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) %
 ll mod_div(ll a, ll b, ll m) {a = a % m; b = b % m; return (mod_mul(a, mminvprime(b, m), m) + m) % m;}  //only for prime m
 ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n /= 2;} for (ll i = 3; i <= sqrt(n); i += 2) {if (n % i == 0) {while (n % i == 0)n /= i; number = (number / i * (i - 1));}} if (n > 1)number = (number / n * (n - 1)) ; return number;} //O(sqrt(N))
 /*--------------------------------------------TEMPLATE ENDS-------------------------------------------------------------------*/
-/*bool PalindromeChecker(string s) {
-    string temp = s;
-    for(int i = 0; i < s.length(); i++) {
-        temp[i] = s[s.length() - i - 1];
-    }
-    if(temp == s) {
-        return true;
-    } 
-    return false;
-}*/
 
 void arkaslittlemind() {
-    long long n, x, y;
-    cin >> n >> x >> y;
-    vector<long long> vec(n);
-    long long xorSum = 0;
-    for(int i = 0; i < n; i++) {
-        cin >> vec[i];
-        xorSum ^= vec[i];
-    }
-    if((xorSum % 2) == (abs(x - y) % 2)) {
-        cout << "Alice" << endl;
-    } else {
-        cout << "Bob" << endl;
-    }
+    
     
 }
 
