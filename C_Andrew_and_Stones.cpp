@@ -73,18 +73,49 @@ ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n
 /*--------------------------------------------TEMPLATE ENDS-------------------------------------------------------------------*/
 
 void arkaslittlemind() {
-   
-}
+    long long n;
+    cin >> n;
+    vector<long long> v(n);
+    int count = 0;
+    for(int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+    for(int i = 1; i < n - 1; i++){
+        if(v[i] >= 2)
+        count++;
+    }
+    int var1 = n - 2;
+    int var2 = v[1] % 2;
+    if(var1 == 1 && var2 == 1){
+        cout << -1 << nline;
+    }
+    else {
+        long long res = 0;
+        for(long long i = 1; i < n - 1; i++){
+            long long var3 = v[i] % 2;
+            long long var = (v[i]+1)/2;
+            if(var3 == 0 && v[i] >= 2)
+                res += v[i]/2 ;
+            if(var3 == 1 && count >= 1 )
+                res += var ;
+        }
+            if(res == 0)
+            cout << -1 << nline;
+            else
+            cout << res << nline;
+    }
+    }
+
 
 
 
 
 int main() {
 #ifdef arkaslittlemind
-  freopen("Error.txt", "w", stderr);
-#endif
-  fastio();
-  auto start1 = high_resolution_clock::now();
+    freopen("Error.txt", "w", stderr);
+    #endif
+    fastio();
+    auto start1 = high_resolution_clock::now();
 
 
 
@@ -94,9 +125,9 @@ int main() {
     arkaslittlemind ();
 }
 
-  auto stop1 = high_resolution_clock::now();
-  auto duration = duration_cast<microseconds>(stop1 - start1);
-#ifdef arkaslittlemind
-  cerr << "Time: " << duration . count() / 1000 << endl;
+    auto stop1 = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop1 - start1);
+    #ifdef arkaslittlemind
+    cerr << "Time: " << duration . count() / 1000 << endl;
 #endif
 }
